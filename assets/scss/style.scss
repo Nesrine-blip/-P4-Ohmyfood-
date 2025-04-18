@@ -1,0 +1,24 @@
+/* -----------------------------
+   🧰 UTILS : variables, mixins, reset
+------------------------------ */
+@use '../utils/variables';
+@use '../utils/mixins';
+@use '../utils/normalise';
+
+/* -----------------------------
+   🧱 LAYOUT : structure globale (header, footer…)
+------------------------------ */
+@use '../layout/header';
+@use '../layout/footer';
+
+/* -----------------------------
+   💎 COMPONENTS : éléments réutilisables
+------------------------------ */
+@use '../component/animations';
+@use '../component/button';
+@use '../component/functioning';
+@use '../component/info';
+@use '../component/loader';
+@use '../component/location';
+@use '../component/menu-pages';
+@use '../component/restaurant-list';
