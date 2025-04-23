@@ -8,9 +8,9 @@
 @use '../layout/footer';
 
 // ========== COMPONENTS ==========
-@use '../component/button';
-@use '../component/animations'; 
-@use '../component/location';
-@use '../component/functioning';
-@use '../component/restaurant-list';
-@use '../component/loader';
+@use '../modules/button';
+@use '../modules/animations'; 
+@use '../modules/location';
+@use '../modules/functioning';
+@use '../modules/restaurant-list';
+@use '../modules/loader';
