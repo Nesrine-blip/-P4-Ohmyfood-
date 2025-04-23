@@ -1,0 +1,16 @@
+// ========== UTILS ==========
+@use '../utils/variables';
+@use '../utils/mixins';
+@use '../utils/normalise';
+
+// ========== LAYOUT ==========
+@use '../layout/header';
+@use '../layout/footer';
+
+// ========== COMPONENTS ==========
+@use '../component/button';
+@use '../component/animations'; 
+@use '../component/location';
+@use '../component/functioning';
+@use '../component/restaurant-list';
+@use '../component/loader';

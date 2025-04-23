@@ -1,0 +1,30 @@
+@use '../utils/variables'; // Import du fichier contenant la variable
+
+
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: variables.$menu-color;
+    padding:39px 20px 50px;
+   
+
+&__title {
+font-family: variables.$primary-font;
+font-size: 24px;
+font-weight: 700px;
+
+}
+&__subtitle {
+
+font-size: 18px;
+font-weight: 300;
+font-family: variables.$primary-font;
+color: #353535;
+margin-top: 5px;
+
+
+}
+}

@@ -1,0 +1,29 @@
+@use '../utils/variables'; // Import du fichier contenant la variable
+@use '../utils/mixins'; // Import du fichier contenant le mixin
+.cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 500;
+        font-size: 16px;
+        width: 218px; 
+        height: 50px;
+        border: none;
+        font-family: variables.$primary-font;
+        color: variables.$text-color;
+        @include mixins.linearGradient;
+        @include mixins.shadow;
+        @include mixins.transition-smooth;
+    }
+    &__button:hover {
+        filter: brightness(110%);
+        @include mixins.box-shadow-button;
+        
+    }
+}

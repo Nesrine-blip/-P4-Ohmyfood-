@@ -1,0 +1,15 @@
+@mixin shadow {
+  box-shadow:  0px 4px 10px 0px rgba(0, 0, 0, 0.25);;
+}
+
+@mixin linearGradient {
+   background: linear-gradient(#FF79DA,#9356DC);
+}
+
+@mixin box-shadow-button {
+   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.55);
+   
+}
+@mixin transition-smooth {
+  transition: all 0.3s ease;
+}
