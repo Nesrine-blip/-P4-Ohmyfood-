@@ -1,57 +1,78 @@
 @use '../utils/variables';
 
-
 .footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: variables.$footer-background;
+  padding-bottom: 22px;
+
+  &__content {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    background-color: variables.$footer-background;
-    padding-bottom: 22px;
-    &__content {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        padding: 0;
+    gap: 15px;
+    padding: 0;
     margin-left: 25px;
-        
-    }
-    &__logo {
-        width: 139px;
-        height: 27px;
-        filter: brightness(0) invert(1);
-        margin-top: 22px;
+  }
 
+  &__logo {
+    width: 139px;
+    height: 27px;
+    filter: brightness(0) invert(1);
+    margin-top: 22px;
+  }
 
-    }
-&__list {
+  &__list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 7px;
     padding: 0;
-    
-    
+  }
 
-}
-&__item {
+  &__item {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-}
-&__icon {
+  }
+
+  &__icon {
     width: 11px;
     height: 13px;
     color: variables.$text_color;
-}
-&__link {
+  }
+
+  &__link {
     text-decoration: none;
     color: variables.$text_color;
     font-family: variables.$primary-font;
     font-size: 16px;
-    font-weight: 500;}
+    font-weight: 500;
+  }
 
+  /* =============== Version Desktop =============== */
+  @media (min-width: 1024px) {
+    & {
+      padding: 30px 25px 30px 60px;
+    }
 
+    &__content {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 80px;
+    }
 
+    &__list {
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__logo {
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
 }

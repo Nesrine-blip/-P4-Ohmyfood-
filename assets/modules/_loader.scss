@@ -1,4 +1,8 @@
-@use '../utils/variables';
+@use '../utils/variables'; 
+
+/* =============== Animations =============== */
+
+//  Animation pour faire disparaître progressivement le loader
 @keyframes disappear {
   0% {
     opacity: 0.9;
@@ -9,6 +13,8 @@
     visibility: hidden;
   }
 }
+
+// 🔄 Animation de rotation du cercle (spinner)
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -18,18 +24,22 @@
   }
 }
 
+/* =============== Loader =============== */
+
 .loader {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: variables.$menu-color;
-  inset: 0;
-  animation: disappear 2s;
-  animation-delay: 3s;
-  animation-fill-mode: forwards;
+  background-color: variables.$menu-color; // 🟦 Fond du loader
+  inset: 0; // ➕ Remplit tout l’écran
+  animation: disappear 1s;
+  animation-delay: 2s; // ⏳ Affiché 2 secondes avant disparition
+  animation-fill-mode: forwards; // Garde le style final de l’animation
   z-index: 1;
   opacity: 0.9;
+
+  // 🌀 Cercle animé (spinner)
   &::after {
     content: "";
     width: 100px;
@@ -39,8 +49,6 @@
     border-bottom: 5px solid variables.$tertiary-color;
     border-left: 5px solid transparent;
     border-radius: 50%;
-    animation: spin 2s linear infinite;
-
+    animation: spin 1s linear infinite;
   }
-
 }

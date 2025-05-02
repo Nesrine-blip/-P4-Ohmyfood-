@@ -1,15 +1,18 @@
-@use "../utils/variables"; // Import du fichier contenant la variable
+@use "../utils/variables"; //  Import du fichier des variables SCSS
 
+/* =============== Étapes du fonctionnement (mobile d'abord) =============== */
 .steps {
   display: flex;
   flex-direction: column;
   gap: 10px;
 
+  // 🔹 Titre de la section "Fonctionnement"
   &__title {
     font-family: variables.$primary-font;
     font-size: 24px;
   }
 
+  // 🔹 Conteneur des étapes (1, 2, 3)
   &__list {
     display: flex;
     flex-direction: column;
@@ -17,8 +20,10 @@
     align-items: center;
     width: 100%;
     gap: 15px;
+    margin: 6px;
   }
 
+  // 🔹 Chaque carte d'étape
   &__item {
     display: flex;
     justify-content: center;
@@ -32,11 +37,13 @@
     font-family: variables.$primary-font;
     font-size: 16px;
     font-weight: 350;
+    position: relative;
   }
 
+  // 🔹 Numéro dans le cercle à gauche (1, 2, 3)
   &__number {
     position: absolute;
-    left: 0px;
+    left: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,6 +55,7 @@
     margin-right: 100px;
   }
 
+  // 🔹 Icône de l'étape (mobile, menu, resto)
   &__icon {
     font-size: 20px;
     width: 17px;
@@ -55,4 +63,28 @@
     color: variables.$icon-color;
     margin-right: 15px;
   }
+
+  // 🔹 Variante de couleur pour l'icône de la dernière étape
+  &__icon--modificator {
+    color: variables.$primary-color;
+  }
+}
+
+/* =============== Version Desktop =============== */
+@media (min-width: 1024px) {
+  .steps {
+    padding: 50px 180px; // Ajout d'espace autour de la section sur écran large
+  }
+
+  .steps__list {
+    flex-direction: row; // Affichage en ligne des 3 étapes
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+}
+
+/* Ajustement de la position du numéro (desktop uniquement) */
+.steps__number {
+  left: -8px;
 }

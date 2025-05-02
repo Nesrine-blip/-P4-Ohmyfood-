@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .header {
   display: flex;
   flex-direction: column;
@@ -42,6 +43,7 @@
   width: 100%;
   background-color: #353535;
   padding-bottom: 22px;
+  /* =============== Version Desktop =============== */
 }
 .footer__content {
   display: flex;
@@ -81,6 +83,25 @@
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 500;
+}
+@media (min-width: 1024px) {
+  .footer {
+    padding: 30px 25px 30px 60px;
+  }
+  .footer__content {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 80px;
+  }
+  .footer__list {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+  .footer__logo {
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }
 
 .cta {
@@ -132,6 +153,7 @@
   margin-top: 5px;
 }
 
+/* =============== Étapes du fonctionnement =============== */
 .steps {
   display: flex;
   flex-direction: column;
@@ -148,6 +170,7 @@
   align-items: center;
   width: 100%;
   gap: 15px;
+  margin: 6px;
 }
 .steps__item {
   display: flex;
@@ -162,10 +185,11 @@
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 350;
+  position: relative;
 }
 .steps__number {
   position: absolute;
-  left: 0px;
+  left: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,6 +207,27 @@
   color: #7E7E7E;
   margin-right: 15px;
 }
+.steps__icon--modificator {
+  color: #9356DC;
+}
+
+/* =============== Version Desktop =============== */
+@media (min-width: 1024px) {
+  .steps {
+    padding: 50px 180px;
+  }
+  .steps__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+}
+/* Ajustement du numéro en desktop */
+.steps__number {
+  left: -8px;
+}
 
 * {
   box-sizing: border-box;
@@ -195,6 +240,7 @@
   width: 100%;
   background-color: #F6F6F6;
   padding: 35px 18px 20px 18px;
+  /* =============== Version Desktop =============== */
 }
 .restaurants__title {
   font-family: "Roboto";
@@ -205,7 +251,6 @@
 .restaurants__card {
   display: flex;
   flex-direction: column;
-  width: 100%;
   /* height: 251px;*/
   background-color: white;
   border-radius: 15px;
@@ -269,6 +314,16 @@
 .restaurants__heart:hover {
   opacity: 0;
 }
+@media (min-width: 1024px) {
+  .restaurants {
+    padding: 30px 180px;
+  }
+  .restaurants__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
 
 @keyframes disappear {
   0% {
@@ -295,8 +350,8 @@
   align-items: center;
   background-color: #F6F6F6;
   inset: 0;
-  animation: disappear 2s;
-  animation-delay: 3s;
+  animation: disappear 1s;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
   z-index: 1;
   opacity: 0.9;
@@ -310,5 +365,186 @@
   border-bottom: 5px solid #99E2D0;
   border-left: 5px solid transparent;
   border-radius: 50%;
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+.restaurant-page {
+  border: none;
+  /* =============== Header =============== */
+  /* =============== Section Restaurant =============== */
+  /* =============== Menu Categories =============== */
+  /* =============== Menu Items =============== */
+  /* =============== Animation d'apparition (fade-in) =============== */
+  /* =============== Bouton Commander =============== */
+}
+.restaurant-page .header {
+  height: 63px;
+  position: relative;
+}
+.restaurant-page .header__logo-and-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+}
+.restaurant-page .header__arrow {
+  position: absolute;
+  left: 0;
+  margin-left: 18px;
+  font-size: 30px;
+  color: black;
+}
+.restaurant-page .header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 197px;
+  height: 36px;
+}
+.restaurant-page .restaurant {
+  background-color: #F6F6F6;
+  /* =============== Version Desktop =============== */
+}
+.restaurant-page .restaurant__img {
+  width: 100%;
+  height: 275px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.restaurant-page .restaurant__menu {
+  background-color: #F6F6F6;
+  border-radius: 50px 50px 0 0;
+  width: 100%;
+  margin: 0 auto; /* Centre la section menu */
+  padding: 0 15px;
+  position: relative;
+  top: -40px;
+}
+@media (min-width: 1024px) {
+  .restaurant-page .restaurant {
+    background-color: white;
+  }
+  .restaurant-page .restaurant__menu {
+    width: 70%;
+    margin: 0 auto; /* Centre la section menu */
+    padding: 0 60px;
+    align-items: center;
+  }
+}
+.restaurant-page .restaurant__title-and-heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+.restaurant-page .restaurant__title {
+  font-family: "Shrikhand";
+  font-size: 28px;
+  font-weight: 400;
+}
+.restaurant-page .menu__category-title {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 300;
+  color: grey;
+  border-bottom: 2px solid #99E2D0;
+  width: 40px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+.restaurant-page .menu__item {
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 16px;
+  box-shadow: 0px 4.011px 15.043px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* ✅ ============Span de la coche==========*/
+}
+.restaurant-page .menu__item .menu__text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.restaurant-page .menu__item .menu__title {
+  font-family: "Roboto";
+  font-size: 18px;
+  color: black;
+}
+.restaurant-page .menu__item .menu__desc {
+  font-family: "Roboto";
+  font-size: 15px;
+  font-weight: 300;
+  color: black;
+}
+.restaurant-page .menu__item .menu__price {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+  margin-right: 0;
+  transition: margin-right 0.3s ease;
+}
+.restaurant-page .menu__item .menu__check {
+  position: absolute;
+  top: 0; /* positionne la coche en haut de l'élément parent*/
+  right: 0;
+  width: 9%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  transform: translateX(100%); /* Sort de l'écran */
+  transition: transform 0.3s ease-in-out;
+}
+.restaurant-page .menu__item .fa-check {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: white;
+  color: #99E2D0;
+}
+.restaurant-page .menu__item:hover .menu__check {
+  transform: translateX(0); /* Revient à sa place */
+}
+.restaurant-page .menu__item:hover .menu__price {
+  margin-right: 60px;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Descend légèrement */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Revient à sa place */
+  }
+}
+.restaurant-page .appear_1 {
+  animation: appear 4s;
+  animation-fill-mode: backwards;
+}
+.restaurant-page .appear_2 {
+  animation: appear 4s;
+  animation-fill-mode: backwards;
+  animation-delay: 0.5s;
+}
+.restaurant-page .appear_3 {
+  animation: appear 4s;
+  animation-fill-mode: backwards;
+  animation-delay: 1s;
+}
+.restaurant-page .cta {
+  padding: 40px;
+}
+@media (min-width: 1024px) {
+  .restaurant-page .menu__item:hover .menu__price {
+    margin-right: 100px;
+  }
 }/*# sourceMappingURL=style.css.map */
