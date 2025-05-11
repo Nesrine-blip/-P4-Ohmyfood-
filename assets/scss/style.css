@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/*  Ombre douce pour les blocs */
+/*  Dégradé linéaire principal */
+/*  Ombre plus marquée pour les boutons */
+/*  Transition fluide pour effets visuels */
 .header {
   display: flex;
   flex-direction: column;
@@ -32,7 +36,7 @@
   height: 19px;
   font-family: "Roboto";
   font-size: 16px;
-  font-weight: 500px;
+  font-weight: 500;
   background-color: #EAEAEA;
   border: none;
 }
@@ -131,6 +135,7 @@
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.55);
 }
 
+/* =============== Section d’introduction (location) =============== */
 .location {
   display: flex;
   flex-direction: column;
@@ -143,7 +148,7 @@
 .location__title {
   font-family: "Roboto";
   font-size: 24px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 .location__subtitle {
   font-size: 18px;
@@ -153,7 +158,7 @@
   margin-top: 5px;
 }
 
-/* =============== Étapes du fonctionnement =============== */
+/* =============== Étapes du fonctionnement (mobile d'abord) =============== */
 .steps {
   display: flex;
   flex-direction: column;
@@ -189,7 +194,7 @@
 }
 .steps__number {
   position: absolute;
-  left: 2px;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,7 +203,7 @@
   border-radius: 50%;
   background-color: #9356DC;
   color: white;
-  margin-right: 100px;
+  margin-left: 3px;
 }
 .steps__icon {
   font-size: 20px;
@@ -217,30 +222,42 @@
     padding: 50px 180px;
   }
   .steps__list {
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 25px;
   }
 }
-/* Ajustement du numéro en desktop */
+/* Ajustement de la position du numéro (desktop uniquement) */
 .steps__number {
   left: -8px;
 }
 
+/* =================== RESET GLOBAL =================== */
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
+/* =================== Section Restaurants (accueil) =================== */
 .restaurants {
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: #F6F6F6;
   padding: 35px 18px 20px 18px;
-  /* =============== Version Desktop =============== */
+  /*  Titre de section */
+  /*  Carte de restaurant */
+  /*  Lien cliquable de la carte */
+  /*  Image du restaurant */
+  /*  Contenu textuel */
+  /* ❤️ Info + icône cœur */
+  /*  Nom du restaurant */
+  /*  Lieu du restaurant */
+  /*  Zone de notation */
+  /* ❤️ Cœur plein (sur hover) */
+  /*  Hover effets */
+  /* =================== Version Desktop =================== */
 }
 .restaurants__title {
   font-family: "Roboto";
@@ -251,7 +268,6 @@
 .restaurants__card {
   display: flex;
   flex-direction: column;
-  /* height: 251px;*/
   background-color: white;
   border-radius: 15px;
   margin-bottom: 20px;
@@ -306,15 +322,20 @@
   -webkit-background-clip: text;
           background-clip: text;
   opacity: 0;
-  transition: 300ms;
+  transform: scale(1);
+  transition: all 0.3s ease;
 }
 .restaurants__heart-full:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 .restaurants__heart:hover {
   opacity: 0;
 }
 @media (min-width: 1024px) {
+  .restaurants {
+    /*  Affichage en grille des cartes */
+  }
   .restaurants {
     padding: 30px 180px;
   }
@@ -325,6 +346,7 @@
   }
 }
 
+/* =============== Animations =============== */
 @keyframes disappear {
   0% {
     opacity: 0.9;
@@ -343,6 +365,7 @@
     transform: rotate(360deg);
   }
 }
+/* =============== Loader =============== */
 .loader {
   position: fixed;
   display: flex;
@@ -372,10 +395,10 @@
   border: none;
   /* =============== Header =============== */
   /* =============== Section Restaurant =============== */
-  /* =============== Menu Categories =============== */
-  /* =============== Menu Items =============== */
-  /* =============== Animation d'apparition (fade-in) =============== */
-  /* =============== Bouton Commander =============== */
+  /* =============== Titre de catégorie du menu =============== */
+  /* =============== Carte de menu individuelle =============== */
+  /* =============== Animation d'apparition des plats =============== */
+  /* =============== Bouton de commande =============== */
 }
 .restaurant-page .header {
   height: 63px;
@@ -403,7 +426,7 @@
 }
 .restaurant-page .restaurant {
   background-color: #F6F6F6;
-  /* =============== Version Desktop =============== */
+  /*  Version Desktop */
 }
 .restaurant-page .restaurant__img {
   width: 100%;
@@ -415,7 +438,7 @@
   background-color: #F6F6F6;
   border-radius: 50px 50px 0 0;
   width: 100%;
-  margin: 0 auto; /* Centre la section menu */
+  margin: 0 auto;
   padding: 0 15px;
   position: relative;
   top: -40px;
@@ -426,7 +449,7 @@
   }
   .restaurant-page .restaurant__menu {
     width: 70%;
-    margin: 0 auto; /* Centre la section menu */
+    margin: 0 auto;
     padding: 0 60px;
     align-items: center;
   }
@@ -464,7 +487,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* ✅ ============Span de la coche==========*/
+  cursor: pointer;
 }
 .restaurant-page .menu__item .menu__text {
   display: flex;
@@ -492,7 +515,7 @@
 }
 .restaurant-page .menu__item .menu__check {
   position: absolute;
-  top: 0; /* positionne la coche en haut de l'élément parent*/
+  top: 0;
   right: 0;
   width: 9%;
   height: 100%;
@@ -500,7 +523,7 @@
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
-  transform: translateX(100%); /* Sort de l'écran */
+  transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
 }
 .restaurant-page .menu__item .fa-check {
@@ -511,19 +534,24 @@
   color: #99E2D0;
 }
 .restaurant-page .menu__item:hover .menu__check {
-  transform: translateX(0); /* Revient à sa place */
+  transform: translateX(0);
 }
 .restaurant-page .menu__item:hover .menu__price {
   margin-right: 60px;
 }
+@media (min-width: 1024px) {
+  .restaurant-page .menu__item:hover .menu__price {
+    margin-right: 100px;
+  }
+}
 @keyframes appear {
   0% {
     opacity: 0;
-    transform: translateY(30px); /* Descend légèrement */
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Revient à sa place */
+    transform: translateY(0);
   }
 }
 .restaurant-page .appear_1 {
@@ -542,9 +570,4 @@
 }
 .restaurant-page .cta {
   padding: 40px;
-}
-@media (min-width: 1024px) {
-  .restaurant-page .menu__item:hover .menu__price {
-    margin-right: 100px;
-  }
 }/*# sourceMappingURL=style.css.map */

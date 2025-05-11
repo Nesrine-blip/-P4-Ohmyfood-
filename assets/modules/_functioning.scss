@@ -43,7 +43,7 @@
   // 🔹 Numéro dans le cercle à gauche (1, 2, 3)
   &__number {
     position: absolute;
-    left: 2px;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@
     border-radius: 50%;
     background-color: variables.$primary-color;
     color: variables.$text-color;
-    margin-right: 100px;
+    margin-left: 3px;
   }
 
   // 🔹 Icône de l'étape (mobile, menu, resto)
